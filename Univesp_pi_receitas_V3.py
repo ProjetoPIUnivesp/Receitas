@@ -5,8 +5,8 @@ import pandas as pd
 # Conexão com o MySQL
 conn = mysql.connector.connect(
     host='sql10.freesqldatabase.com',
-    user=DB_USERNAME,
-    password=DB_PASSWORD,
+    user=st.secrets['DB_USERNAME'],
+    password=st.secrets['DB_PASSWORD'],
     database='sql10767151' 
 )
 
