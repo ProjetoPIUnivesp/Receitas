@@ -7,11 +7,11 @@ import pandas as pd
 
 # Conexão com o MySQL
 config = {
-    'host': 'sql.freedb.tech',
-    'user': 'freedb_Alunos_10',
-    'password': 'TbH%TuE6k53bpMn',
-    'database': 'freedb_Receitas',
-    'charset': 'utf8mb4',
+    'host':'sql.freedb.tech',
+    'user':st.secrets['DB_USERNAME'],
+    'password':st.secrets['DB_PASSWORD'],
+    'database':'freedb_Receitas', 
+    'charset':'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
 }
 
