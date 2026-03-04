@@ -172,3 +172,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignorar arquivos de secrets do Streamlit
+.streamlit/secrets.toml
