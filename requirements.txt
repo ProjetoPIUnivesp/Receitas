@@ -4,7 +4,7 @@ mysql-connector-python==9.2.0
 mysqlclient==2.2.0
 pandas==1.5.3
 pymysql==1.1.1
-pip show google.generativeai==0.8.6
+google.generativeai==0.8.6
 requests==2.32.5
 json5==0.9.6
 ujson==5.4.0
