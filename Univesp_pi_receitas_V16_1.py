@@ -7,11 +7,11 @@ import requests
 from urllib.parse import quote
 
 # Configurações de login (definidas diretamente no código)
-USUARIO_CORRETO = "admin"
-SENHA_CORRETA = "12345"
+USUARIO_CORRETO = st.secrets['CD_USERNAME']
+SENHA_CORRETA = st.secrets['CD_PASSWORD']
 
 # Configuração da API Google Gemini
-API_KEY = 'AIzaSyByLAXHRDCyB_QsiBghhgEhNocfg8DYhUQ'
+API_KEY = st.secrets['API_TOKEN_CD']
 genai.configure(api_key=API_KEY)
 
 # Função para consultar a IA (adaptada para UMA ÚNICA chamada)
@@ -139,8 +139,8 @@ def verificar_login():
 # Conexão com o MySQL
 config = {
     'host': 'sql.freedb.tech',
-    'user': 'freedb_Alunos_10',
-    'password': '%?4u2Y@&f&3YpdH',
+    'user': st.secrets['DB_USERNAME'],
+    'password': st.secrets['DB_PASSWORD'],
     'database': 'freedb_freedb_Receitas',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
@@ -361,4 +361,5 @@ if verificar_login():
                     st.error("Por favor, preencha novamente os campos.")
                     
     # Fechar a conexão com o banco de dados
+
     conn.close()
