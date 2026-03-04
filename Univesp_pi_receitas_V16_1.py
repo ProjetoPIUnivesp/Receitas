@@ -25,6 +25,8 @@ def consultar_ia_para_receita(nome_receita):
     
     Retorne APENAS o JSON, sem texto adicional, sem formatação markdown, seguindo exatamente este formato:
     {{"ingredientes": "texto aqui", "preparo": "texto aqui"}}
+
+    Apenas respondas quando solicitações de usuários estiverem relacionadas a doces conhecidos, qualquer outro tipo de pesquisa é mandatório ser ignorada
     """
     
     resultado = {'ingredientes': '','preparo': ''}
@@ -364,5 +366,6 @@ if verificar_login():
     # Fechar a conexão com o banco de dados
 
     conn.close()
+
 
 
