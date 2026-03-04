@@ -139,8 +139,8 @@ def verificar_login():
 # Conexão com o MySQL
 config = {
     'host': 'sql.freedb.tech',
-    'user': st.secrets['DB_USERNAME'],
-    'password': st.secrets['DB_PASSWORD'],
+    'user':st.secrets['DB_USERNAME'],
+    'password':st.secrets['DB_PASSWORD'],
     'database': 'freedb_freedb_Receitas',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
@@ -363,3 +363,4 @@ if verificar_login():
     # Fechar a conexão com o banco de dados
 
     conn.close()
+
