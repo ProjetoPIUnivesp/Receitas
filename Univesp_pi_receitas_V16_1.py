@@ -140,11 +140,11 @@ def verificar_login():
 
 # Conexão com o MySQL
 config = {
-    'host': 'sql.freedb.tech',
-    'port': 3306,
-    'user':st.secrets['DB_USERNAME'],
-    'password':st.secrets['DB_PASSWORD'],
-    'database': 'freedb_freedb_Receitas',
+    'host': 'mysql-3885fe6a-aluno-45cf.d.aivencloud.com',
+    'port': 11723,
+    'user': st.secrets['DB_USERNAME'],
+    'password': st.secrets['DB_PASSWORD'],
+    'database': 'Receitas',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
 }
@@ -215,7 +215,7 @@ if verificar_login():
             # Consulta SQL para obter os ingredientes, preparo e link
             query = f"""
                 SELECT Ingredientes, Preparo, link
-                FROM Receitas
+                FROM nome_da_tabela
                 WHERE UPPER(Nome) LIKE UPPER(REPLACE('%{user_input}%',' ',''))
                 LIMIT 10
             """
@@ -327,7 +327,7 @@ if verificar_login():
 
                     # Inserção no banco de dados
                     query_inserir = f"""
-                        INSERT INTO Receitas (Nome, Ingredientes, Preparo, link)
+                        INSERT INTO nome_da_tabela (Nome, Ingredientes, Preparo, link)
                         VALUES ('{nome_receita}', '{ingredientes}', '{preparo}', '{link_youtube}')
                     """
                     cursor.execute(query_inserir)
@@ -352,7 +352,7 @@ if verificar_login():
 
                     # Deletar no banco de dados
                     query_deletar = f"""
-                        DELETE FROM Receitas
+                        DELETE FROM nome_da_tabela
                         WHERE UPPER(Nome) LIKE UPPER(REPLACE('%{nome_receita}%',' ',''));
                     """
                     cursor.execute(query_deletar)
@@ -364,8 +364,4 @@ if verificar_login():
                     st.error("Por favor, preencha novamente os campos.")
                     
     # Fechar a conexão com o banco de dados
-
     conn.close()
-
-
-
