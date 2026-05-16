@@ -1,2 +1,6 @@
 pkg-config
 default-libmysqlclient-dev
+libjpeg-dev
+zlib1g-dev
+libpng-dev
+libtiff-dev
