@@ -215,7 +215,7 @@ if verificar_login():
             # Consulta SQL para obter os ingredientes, preparo e link
             query = f"""
                 SELECT Ingredientes, Preparo, link
-                FROM nome_da_tabela
+                FROM Receitas
                 WHERE UPPER(Nome) LIKE UPPER(REPLACE('%{user_input}%',' ',''))
                 LIMIT 10
             """
@@ -327,7 +327,7 @@ if verificar_login():
 
                     # Inserção no banco de dados
                     query_inserir = f"""
-                        INSERT INTO nome_da_tabela (Nome, Ingredientes, Preparo, link)
+                        INSERT INTO Receitas (Nome, Ingredientes, Preparo, link)
                         VALUES ('{nome_receita}', '{ingredientes}', '{preparo}', '{link_youtube}')
                     """
                     cursor.execute(query_inserir)
@@ -352,7 +352,7 @@ if verificar_login():
 
                     # Deletar no banco de dados
                     query_deletar = f"""
-                        DELETE FROM nome_da_tabela
+                        DELETE FROM Receitas
                         WHERE UPPER(Nome) LIKE UPPER(REPLACE('%{nome_receita}%',' ',''));
                     """
                     cursor.execute(query_deletar)
