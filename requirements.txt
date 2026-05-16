@@ -9,3 +9,4 @@ requests==2.32.5
 json5==0.9.6
 ujson==5.4.0
 urllib3==1.26.16
+pillow>=10.4.0
